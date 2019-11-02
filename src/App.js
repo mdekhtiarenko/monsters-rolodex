@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { CartList } from './components/cart-list/cart-list.component';
+import { SearchBox } from './components/search-box/search-box';
 
 class App extends Component {
   constructor() {
@@ -22,10 +23,8 @@ class App extends Component {
     const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()))
     return (
       <div>
-        <input
-          type="search"
-          placeholder="Search for the monster"
-          onChange={e => this.setState({ searchField: e.target.value })} />
+        <h1>Monsters Rolodex</h1>
+        <SearchBox placeholder="Search for a monster" handleChangeFunction={e => this.setState({ searchField: e.target.value })} />
         <CartList monsters={filteredMonsters} />
       </div>
     )
