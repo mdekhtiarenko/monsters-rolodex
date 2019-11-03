@@ -9,6 +9,7 @@
     border: none;
     font-weight: 700;
     background-color: white;
+    -webkit-appearance: none;
 }
 
 .search:focus{
